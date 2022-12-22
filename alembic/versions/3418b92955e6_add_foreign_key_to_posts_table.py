@@ -1,8 +1,8 @@
 """add foreign-key to posts table
 
-Revision ID: 17a548232cdb
-Revises: ed46a5a5d1fe
-Create Date: 2022-12-20 17:06:36.977078
+Revision ID: 3418b92955e6
+Revises: b8f240f747eb
+Create Date: 2022-12-22 18:17:29.377263
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '17a548232cdb'
-down_revision = 'ed46a5a5d1fe'
+revision = '3418b92955e6'
+down_revision = 'b8f240f747eb'
 branch_labels = None
 depends_on = None
 
@@ -27,3 +27,4 @@ def downgrade():
     op.drop_constraint('post_users_fk', table_name="posts")
     op.drop_column('posts', 'owner_id')
     pass
+
