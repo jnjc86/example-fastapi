@@ -62,7 +62,7 @@ def  delete_post(id: int, db: Session = Depends(get_db), current_user: int = Dep
     #cursor.execute("""DELETE FROM posts WHERE id = %s RETURNING *""", (str(id),))
     #deleted_post = cursor.fetchone()
     #conn.commit()
-    post_query = db.query(models.Post).filter(models.Post.id == id).first()
+    post_query = db.query(models.Post).filter(models.Post.id == id)
 
     post = post_query.first()
    
