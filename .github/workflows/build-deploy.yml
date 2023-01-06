@@ -8,9 +8,9 @@ jobs:
    name: testing
   env:
    DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
-   DATABASE_PORT: ${{secrets.DATABSE_PORT}}
+   DATABASE_PORT: ${{secrets.DATABASE_PORT}}
    DATABASE_PASSWORD: ${{secrets.DATABASE_PASSWORD}}
-   DATABASE_NAME: ${{secrets.DATABSE_NAME}}
+   DATABASE_NAME: ${{secrets.DATABASE_NAME}}
    DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
    SECRET_KEY: ${{secrets.SECRET_KEY}}
    ALGORITHM: ${{secrets.ALGORITHM}}
@@ -29,7 +29,7 @@ jobs:
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-          
+
   runs-on: ubuntu-latest
   steps:
    - name: pulling git repo
@@ -45,6 +45,6 @@ jobs:
    - name: test with pytest
      run: |
       pip  install pytest
-      pytest -v -s
+      pytest 
 
    
